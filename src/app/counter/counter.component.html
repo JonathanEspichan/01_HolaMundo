@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contador</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    body {
+        background: url("https://scontent.flim9-1.fna.fbcdn.net/v/t1.6435-9/87750785_2916933884996636_7700503090415271936_n.png?_nc_cat=102&ccb=1-7&_nc_sid=e3f864&_nc_ohc=v4rq-P3bBAsAX_6jNK1&_nc_ht=scontent.flim9-1.fna&oh=00_AfCqGXZIc42PLSanAdd3WWTojesmYFqATpssgvNr0bdmMg&oe=65182B8B") no-repeat center center fixed;
+        background-size: cover;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .card {
+        border-radius: 25px;
+        width: 100%;
+        max-width: 400px; /* Ajusta el valor según el tamaño deseado */
+        background-color: rgba(67, 224, 0, 0.867);
+        font-family: cursive;
+    }
+
+    .card-title {
+        font-style: italic;
+        text-align: center;
+    }
+
+    .btn-outline-success {
+        background-color: yellow;
+        border-color: yellow;
+        color: black;
+    }
+
+    .btn-outline-success:hover {
+        background-color: darkred;
+        border-color: darkred;
+        color: white;
+    }
+
+    .btn-outline-danger {
+        background-color: yellow;
+        border-color: yellow;
+        color: black;
+    }
+
+    .btn-outline-danger:hover {
+        background-color: darkred;
+        border-color: darkred;
+        color: white;
+    }
+</style>
+
+<style>
+
+    .card {
+        border-radius: 50px;
+        width: 100%;
+        max-width: 400px;
+        background-color: rgba(67, 224, 0, 0.927);
+        font-family: cursive;
+        margin-top: 2px; 
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center"> <!-- Añadida clase d-flex -->
+            <br>
+            <div class="card">
+                <h1 class="card-title">Contador: {{ counter }}</h1>
+                <div class="card-body text-center">
+                    <form>
+                        <div class="box-footer d-flex justify-content-center">
+                            <button type="button" (click)="increase()" class="btn btn-outline-success col-sm-5">+1</button>
+                            <button type="button" (click)="decrease()" [disabled]="counter === 0" class="btn btn-outline-danger col-sm-5">-1</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
